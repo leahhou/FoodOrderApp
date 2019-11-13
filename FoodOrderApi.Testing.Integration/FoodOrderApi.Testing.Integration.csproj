@@ -17,4 +17,32 @@
       <ProjectReference Include="..\FoodOrderApp\FoodOrderApp.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_UnmanagedRegistrationCache Remove="obj\FoodOrderApi.Testing.Integration.csproj.UnmanagedRegistration.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ResolveComReferenceCache Remove="obj\Debug\netcoreapp2.2\FoodOrderApi.Testing.Integration.csproj.ResolveComReference.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <IntermediateAssembly Remove="obj\Debug\netcoreapp2.2\FoodOrderApi.Testing.Integration.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DebugSymbolsIntermediatePath Remove="obj\Debug\netcoreapp2.2\FoodOrderApi.Testing.Integration.pdb" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DeploymentManifestEntryPoint Remove="obj\Debug\netcoreapp2.2\FoodOrderApi.Testing.Integration.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ApplicationManifest Remove="obj\Debug\netcoreapp2.2\Native.FoodOrderApi.Testing.Integration.manifest" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <DeployManifest Remove="obj\Debug\netcoreapp2.2\FoodOrderApi.Testing.Integration.application" />
+    </ItemGroup>
+
 </Project>

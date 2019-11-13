@@ -16,4 +16,32 @@
       <ProjectReference Include="..\FoodOrderApp\FoodOrderApp.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_UnmanagedRegistrationCache Remove="obj\FoodOrderApp.UnitTesting.csproj.UnmanagedRegistration.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ResolveComReferenceCache Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.UnitTesting.csproj.ResolveComReference.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <IntermediateAssembly Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.UnitTesting.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DebugSymbolsIntermediatePath Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.UnitTesting.pdb" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DeploymentManifestEntryPoint Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.UnitTesting.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ApplicationManifest Remove="obj\Debug\netcoreapp2.2\Native.FoodOrderApp.UnitTesting.manifest" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <DeployManifest Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.UnitTesting.application" />
+    </ItemGroup>
+
 </Project>

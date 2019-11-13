@@ -4,4 +4,32 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_UnmanagedRegistrationCache Remove="obj\FoodOrderApp.csproj.UnmanagedRegistration.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ResolveComReferenceCache Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.csproj.ResolveComReference.cache" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <IntermediateAssembly Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DebugSymbolsIntermediatePath Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.pdb" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_DeploymentManifestEntryPoint Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ApplicationManifest Remove="obj\Debug\netcoreapp2.2\Native.FoodOrderApp.manifest" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <DeployManifest Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.application" />
+    </ItemGroup>
+
 </Project>
