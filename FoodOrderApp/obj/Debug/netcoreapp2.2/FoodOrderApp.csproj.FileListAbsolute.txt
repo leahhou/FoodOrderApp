@@ -1,0 +1,9 @@
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/bin/Debug/netcoreapp2.2/FoodOrderApp.deps.json
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/bin/Debug/netcoreapp2.2/FoodOrderApp.dll
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/bin/Debug/netcoreapp2.2/FoodOrderApp.pdb
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.csprojAssemblyReference.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.csproj.CoreCompileInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.AssemblyInfoInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.AssemblyInfo.cs
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.dll
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApp/obj/Debug/netcoreapp2.2/FoodOrderApp.pdb

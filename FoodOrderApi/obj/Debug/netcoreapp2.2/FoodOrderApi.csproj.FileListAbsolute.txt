@@ -1,0 +1,14 @@
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApi.deps.json
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApi.runtimeconfig.json
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApi.runtimeconfig.dev.json
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApi.dll
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApi.pdb
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.csprojAssemblyReference.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.csproj.CoreCompileInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.AssemblyInfoInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.AssemblyInfo.cs
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.dll
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.pdb
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApp.dll
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/bin/Debug/netcoreapp2.2/FoodOrderApp.pdb
+/Users/leah.hou/RiderProjects/WebApplication/FoodOrderApi/obj/Debug/netcoreapp2.2/FoodOrderApi.csproj.CopyComplete

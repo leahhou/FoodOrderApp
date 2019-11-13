@@ -1,0 +1,11 @@
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/bin/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.deps.json
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/bin/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.runtimeconfig.json
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/bin/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.runtimeconfig.dev.json
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/bin/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.dll
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/bin/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.pdb
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.csprojAssemblyReference.cache
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.csproj.CoreCompileInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.AssemblyInfoInputs.cache
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.AssemblyInfo.cs
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.dll
+/Users/leah.hou/RiderProjects/WebApplication/WebApplication.HelloWorldFrameless/obj/Debug/netcoreapp2.2/WebApplication.HelloWorldFrameless.pdb

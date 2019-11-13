@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrderApi", "FoodOrderApi\FoodOrderApi.csproj", "{0B4BF6F2-8859-488D-8F10-CC6F3EA60459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrderApi.Testing.Integration", "FoodOrderApi.Testing.Integration\FoodOrderApi.Testing.Integration.csproj", "{5F71FAAE-9C4B-4A16-9373-2EB41905FB04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrderApp", "FoodOrderApp\FoodOrderApp.csproj", "{A8B556D0-2DD6-40B1-9F6A-8ED1AC238025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrderApp.UnitTesting", "FoodOrderApp.UnitTesting\FoodOrderApp.UnitTesting.csproj", "{3331EEF4-2959-4873-8E88-0A06DF616E91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B4BF6F2-8859-488D-8F10-CC6F3EA60459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4BF6F2-8859-488D-8F10-CC6F3EA60459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4BF6F2-8859-488D-8F10-CC6F3EA60459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4BF6F2-8859-488D-8F10-CC6F3EA60459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F71FAAE-9C4B-4A16-9373-2EB41905FB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F71FAAE-9C4B-4A16-9373-2EB41905FB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F71FAAE-9C4B-4A16-9373-2EB41905FB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F71FAAE-9C4B-4A16-9373-2EB41905FB04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B556D0-2DD6-40B1-9F6A-8ED1AC238025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B556D0-2DD6-40B1-9F6A-8ED1AC238025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B556D0-2DD6-40B1-9F6A-8ED1AC238025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B556D0-2DD6-40B1-9F6A-8ED1AC238025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3331EEF4-2959-4873-8E88-0A06DF616E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3331EEF4-2959-4873-8E88-0A06DF616E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3331EEF4-2959-4873-8E88-0A06DF616E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3331EEF4-2959-4873-8E88-0A06DF616E91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

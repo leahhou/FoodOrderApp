@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d837e8c4-595b-4dee-846e-8e911029f39e" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99767828-0215-48D2-B028-B2267C1114C6/0e/cc128ad2/StringContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99767828-0215-48D2-B028-B2267C1114C6/2c/480db631/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp/Models/Orders.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33E46F62-2720-44F4-B84B-BEBF6D7F0B71/1a/3adf419f/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi/OrderRequestParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp/OrderController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi.Testing.Integration/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33E46F62-2720-44F4-B84B-BEBF6D7F0B71/08/ddd45ffa/EventSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/95E184CB-E624-4AF4-AF62-4E62AE43DC9D/ac/2a61f482/HttpListener.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33E46F62-2720-44F4-B84B-BEBF6D7F0B71/d4/49d23134/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp.UnitTesting/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp/OrdersDataInMemory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp/IOrdersData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApp/Models/Order.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication.HelloWorldFrameless/HttpServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication.HelloWorldFrameless/Routes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi/OrderResponseSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi/HttpServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApplication.HelloWorldFrameless/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/FoodOrderApi/OrderRequestValidator.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/Routes.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/HellowWorldServer.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/NamesClass.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/UsersClass.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/User.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/Users.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/HttpServer.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/User.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/Users.cs" />
+        <option value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/Program.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/Order.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/Orders.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/Order.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/Program.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/Orders.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/Program.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/Response.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/ResponseCreator.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/ResponseSender.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/RequestParser.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/RequestValidator.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/IOrder.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/OrderData.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/OrdersData.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp.UnitTesting/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/OrderRequestParser.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/OrderRequestValidator.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/OrderResponseSender.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi.Testing.Integration/UnitTest1.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/OrdersDataInMemory.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/IOrdersData.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApp/OrderController.cs" />
+        <option value="$PROJECT_DIR$/FoodOrderApi/HttpServer.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TDe0ZBBw0U2UB9KqILnKj41aHE" />
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.FoodOrderApi">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FoodOrderApi" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/FoodOrderApi/FoodOrderApi.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.2" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication.HelloWorldFrameless" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/WebApplication.HelloWorldFrameless/WebApplication.HelloWorldFrameless.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.2" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Project.FoodOrderApi" />
+        <item itemvalue=".NET Project.WebApplication.HelloWorldFrameless" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d837e8c4-595b-4dee-846e-8e911029f39e" name="Default Changelist" comment="" />
+      <created>1572998871605</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572998871605</updated>
+      <workItem from="1572998874141" duration="3579000" />
+      <workItem from="1573426984545" duration="4819000" />
+      <workItem from="1573512609548" duration="11003000" />
+      <workItem from="1573527116357" duration="12525000" />
+      <workItem from="1573595580656" duration="23149000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
