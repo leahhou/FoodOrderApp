@@ -104,13 +104,9 @@ namespace FoodOrderApi
                         res.Close();
                     }
                 }
-                catch (PermissionException e)
+                catch (InvalidOrderRequestException e)
                 {
                     responseSender.SendFailResponseWithMessage(res, e.Message, 400);
-                }
-                catch (ApiException e)
-                {
-                    responseSender.SendFailResponseWithMessage(res, e.Message, 403);
                 }
                 catch (InvalidOrderException e)
                 {

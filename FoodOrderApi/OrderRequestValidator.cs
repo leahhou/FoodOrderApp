@@ -1,7 +1,5 @@
 using System;
-using System.Linq;
 using System.Net;
-using FoodOrderApp;
 using FoodOrderApp.Models;
 
 namespace FoodOrderApi
@@ -13,13 +11,13 @@ namespace FoodOrderApi
             var routeId = int.Parse(req.Url.Segments[2] ?? throw new Exception());
             if (routeId == order.Id)
                 return true;
-            throw new PermissionException("Error: Permission Denied.");
+            throw new InvalidOrderRequestException("Request Denied: Inconsistent Id on the request.");
         }
         
         public static void IsOrderIdExistOnRequestBody(Order order)
         {
             if (order.Id == null)
-                throw new ApiException("Error: No id on the body.");
+                throw new InvalidOrderRequestException("Request Denied: No Id is in the Request Body.");
         }
     }
 }

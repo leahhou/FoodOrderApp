@@ -26,14 +26,14 @@ namespace FoodOrderApp
         {
             return ValidateOrder(order)
                 ? OrdersData.Create(order)
-                : throw new InvalidOrderException("Error: FirstName or LastName or FoodOrder cannot be null");
+                : throw new InvalidOrderException("Invalid Order: FirstName or LastName or FoodOrder cannot be empty");
         }
 
         public Order UpdateOrder(Order order)
         {
             return ValidateOrder(order)
                 ? OrdersData.Update(order)
-                : throw new InvalidOrderException("Error: FirstName or LastName or FoodOrder cannot be null");
+                : throw new InvalidOrderException("Invalid Order: FirstName or LastName or FoodOrder cannot be empty");
         }
 
         public List<Order> DeleteOrderById(int? orderId)
@@ -41,11 +41,11 @@ namespace FoodOrderApp
             return OrdersData.DeleteById(orderId);
         }
 
-        private bool ValidateOrder(Order order)
+        private static bool ValidateOrder(Order order)
         {
-            return order.FirstName != null
-                   && order.LastName != null
-                   && order.FoodOrder != null;
+            return !string.IsNullOrWhiteSpace(order.FirstName)
+                   && !string.IsNullOrWhiteSpace(order.LastName)
+                   && !string.IsNullOrWhiteSpace(order.FoodOrder);
         }
     }
 }
