@@ -36,7 +36,7 @@ namespace FoodOrderApp
                 : throw new InvalidOrderException("Error: FirstName or LastName or FoodOrder cannot be null");
         }
 
-        public List<Order> DeleteOrderById(int orderId)
+        public List<Order> DeleteOrderById(int? orderId)
         {
             return OrdersData.DeleteById(orderId);
         }

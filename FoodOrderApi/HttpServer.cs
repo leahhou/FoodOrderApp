@@ -74,6 +74,8 @@ namespace FoodOrderApi
                         var order = await requestParser.GetOrder(req);
 
                         ConsoleRequestMessage(req.HttpMethod);
+                        
+                        OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
 
                         if (OrderRequestValidator.IsOrderIdValid(order, req))
                         {
@@ -105,6 +107,10 @@ namespace FoodOrderApi
                 catch (PermissionException e)
                 {
                     responseSender.SendFailResponseWithMessage(res, e.Message, 400);
+                }
+                catch (ApiException e)
+                {
+                    responseSender.SendFailResponseWithMessage(res, e.Message, 403);
                 }
                 catch (InvalidOrderException e)
                 {

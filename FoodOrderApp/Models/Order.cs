@@ -4,7 +4,7 @@ namespace FoodOrderApp.Models
 {
     public class Order
     {
-        public int Id;
+        public int? Id;
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string FoodOrder { get; private set; }

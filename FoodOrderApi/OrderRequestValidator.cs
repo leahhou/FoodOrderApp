@@ -15,5 +15,11 @@ namespace FoodOrderApi
                 return true;
             throw new PermissionException("Error: Permission Denied.");
         }
+        
+        public static void IsOrderIdExistOnRequestBody(Order order)
+        {
+            if (order.Id == null)
+                throw new ApiException("Error: No id on the body.");
+        }
     }
 }

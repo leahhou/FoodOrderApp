@@ -7,8 +7,8 @@ namespace FoodOrderApp
     {
         Order Create(Order order);
         Order Update(Order order);
-        List<Order> DeleteById(int orderId);
+        List<Order> DeleteById(int? orderId);
         List<Order> RetrieveAll();
-        Order RetrieveById(int orderId);
+        Order RetrieveById(int? orderId);
     }
 }
