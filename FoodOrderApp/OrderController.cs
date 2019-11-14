@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 
 namespace FoodOrderApp
 {
@@ -21,12 +23,14 @@ namespace FoodOrderApp
         
         public Order CreateOrder(Order order)
         {
-            return ValidateOrder(order) ? OrdersData.Create(order) : null;
+            return ValidateOrder(order) ? OrdersData.Create(order) 
+                : throw new InvalidOrderException("Error: FirstName or LastName or FoodOrder cannot be null");
         }
 
         public Order UpdateOrder(Order order)
         {
-            return ValidateOrder(order) ? OrdersData.Update(order) : null;
+            return ValidateOrder(order) ? OrdersData.Update(order) 
+                : throw new InvalidOrderException("Error: FirstName or LastName or FoodOrder cannot be null");
         }
 
         public List<Order> DeleteOrderById(int orderId)

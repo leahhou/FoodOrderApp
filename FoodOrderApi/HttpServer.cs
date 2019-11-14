@@ -39,81 +39,85 @@ namespace FoodOrderApi
                 var orderController = new OrderController(new OrdersDataInMemory());
                 
                 Console.WriteLine($"{req.HttpMethod} request made to {req.Url}\n");
+
+                try
+                {
+                    if (req.HttpMethod == "GET" && req.Url.AbsolutePath == "/orders")
+                    {
+                        ConsoleRequestMessage(req.HttpMethod);
+
+                        var orderList = orderController.GetAllOrders();
+
+                        responseSender.SendSuccessResponse(res, 200, orderList);
+                    }
+                    else if (req.HttpMethod == "GET" && req.Url.AbsolutePath.StartsWith("/orders/"))
+                    {
+                        var order = await requestParser.GetOrder(req);
+
+                        ConsoleRequestMessage(req.HttpMethod);
+
+                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+                        {
+                            var responseBody = orderController.GetOrderById(order.Id);
+                            responseSender.SendSuccessResponse(res, 200, responseBody);
+                        }
+                    }
+                    else if (req.HttpMethod == "POST" && req.Url.AbsolutePath == "/orders")
+                    {
+                        var order = await requestParser.GetOrder(req);
+
+                        ConsoleRequestMessage(req.HttpMethod);
+
+                        var newOrder = orderController.CreateOrder(order);
+
+                        responseSender.SendSuccessResponse(res, 201, newOrder);
+                    }
+                    else if (req.HttpMethod == "PUT" && req.Url.AbsolutePath.StartsWith("/orders/"))
+                    {
+                        var order = await requestParser.GetOrder(req);
+
+                        ConsoleRequestMessage(req.HttpMethod);
+
+                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+                        {
+                            var responseBody = orderController.UpdateOrder(order);
+                            responseSender.SendSuccessResponse(res, 200, responseBody);
+                        }
+                    }
+                    else if (req.HttpMethod == "DELETE" && req.Url.AbsolutePath.StartsWith("/orders/"))
+                    {
+                        var order = await requestParser.GetOrder(req);
+
+                        ConsoleRequestMessage(req.HttpMethod);
+
+                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+                        {
+                            var responseBody = orderController.DeleteOrderById(order.Id);
+                            responseSender.SendSuccessResponse(res, 200, responseBody);
+                        }
+                    }
+                    else
+                    {
+                        var buffer = Encoding.UTF8.GetBytes("all other routes didn't work.");
+                        res.ContentLength64 = buffer.Length;
+
+                        await res.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                        res.Close();
+                    }
+                }
+                catch (PermissionException e)
+                {
+                    responseSender.SendFailResponseWithMessage(res,e.Message,400);
+                }
+                catch (InvalidOrderException e)
+                {
+                    responseSender.SendFailResponseWithMessage(res,e.Message,400);
+                }
+                catch (Exception e)
+                {
+                    responseSender.SendFailResponseWithMessage(res,e.Message, 400);
+                }
                 
-                if (req.HttpMethod == "GET" && req.Url.AbsolutePath == "/orders")
-                {
-                    ConsoleRequestMessage(req.HttpMethod);
-
-                    var orderList = orderController.GetAllOrders();
-                    
-                    responseSender.SendSuccessResponse(res,200,orderList);
-                }
-                else if (req.HttpMethod == "GET" && req.Url.AbsolutePath.StartsWith("/orders/"))
-                {
-                    var order = await requestParser.GetOrder(req);
-
-                    ConsoleRequestMessage(req.HttpMethod);
-
-                    if (OrderRequestValidator.IsOrderIdValid(order, req))
-                    {
-                        var responseBody = orderController.GetOrderById(order.Id);
-                        responseSender.SendSuccessResponse(res, 200, responseBody);
-                    }
-                    else
-                    {
-                        responseSender.SendFailResponse(res,400);
-                    }
-                }
-                else if (req.HttpMethod == "POST" && req.Url.AbsolutePath == "/orders")
-                {
-                    var order = await requestParser.GetOrder(req);
-                    
-                    ConsoleRequestMessage(req.HttpMethod);
-
-                    var newOrder = orderController.CreateOrder(order);
-
-                    responseSender.SendSuccessResponse(res,201,newOrder);
-                }
-                else if (req.HttpMethod == "PUT" && req.Url.AbsolutePath.StartsWith("/orders/"))
-                {
-                    var order = await requestParser.GetOrder(req);
-
-                    ConsoleRequestMessage(req.HttpMethod);
-                    
-                    if (OrderRequestValidator.IsOrderIdValid(order, req))
-                    {
-                        var responseBody = orderController.UpdateOrder(order);
-                        responseSender.SendSuccessResponse(res, 200, responseBody);
-                    }
-                    else
-                    {
-                        responseSender.SendFailResponse(res,400);
-                    }
-                }
-                else if (req.HttpMethod == "DELETE" && req.Url.AbsolutePath.StartsWith("/orders/"))
-                {
-                    var order = await requestParser.GetOrder(req);
-
-                    ConsoleRequestMessage(req.HttpMethod);
-
-                    if (OrderRequestValidator.IsOrderIdValid(order, req))
-                    {
-                        var responseBody = orderController.DeleteOrderById(order.Id);
-                        responseSender.SendSuccessResponse(res, 200, responseBody);
-                    }
-                    else
-                    {
-                        responseSender.SendFailResponse(res,400);
-                    }
-                }
-                else
-                {
-                    var buffer = Encoding.UTF8.GetBytes("all other routes didn't work.");
-                    res.ContentLength64 = buffer.Length;
-
-                    await res.OutputStream.WriteAsync(buffer, 0, buffer.Length);
-                    res.Close();
-                }
             }
         }
 
