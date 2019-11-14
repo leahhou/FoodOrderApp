@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using FoodOrderApp;
+using FoodOrderApp.Models;
 using Newtonsoft.Json;
 
 namespace FoodOrderApi

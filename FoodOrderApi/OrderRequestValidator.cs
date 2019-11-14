@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Net;
 using FoodOrderApp;
+using FoodOrderApp.Models;
 
 namespace FoodOrderApi
 {
@@ -9,9 +10,8 @@ namespace FoodOrderApi
     {
         public static bool IsOrderIdValid(Order order, HttpListenerRequest req)
         {
-            var routeId = int.Parse(req.Url.Segments.LastOrDefault() ?? throw new Exception());
-            var requestId = int.Parse(req.Headers["id"]);
-            if (routeId == requestId)
+            var routeId = int.Parse(req.Url.Segments[2] ?? throw new Exception());
+            if (routeId == order.Id)
                 return true;
             throw new PermissionException("Error: Permission Denied.");
         }

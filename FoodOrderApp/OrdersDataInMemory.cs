@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using System.Net.Sockets;
+using FoodOrderApp.Models;
 
 namespace FoodOrderApp
 {
-    public class OrdersDataInMemory :IOrdersData
+    public class OrdersDataInMemory : IOrdersData
     {
         public readonly Orders Orders;
 
@@ -11,13 +11,14 @@ namespace FoodOrderApp
         {
             Orders = Orders.Instance;
         }
+
         public Order Create(Order order)
         {
             order.Id = AssignId();
             Orders.AllOrders.Add(order);
             return order;
         }
-        
+
         public Order Update(Order order)
         {
             var orderIndex = FindById(order.Id);
@@ -30,12 +31,12 @@ namespace FoodOrderApp
             Orders.AllOrders.RemoveAt(orderId);
             return Orders.AllOrders;
         }
-        
+
         public List<Order> RetrieveAll()
         {
             return Orders.AllOrders;
         }
-        
+
         public Order RetrieveById(int orderId)
         {
             return Orders.AllOrders[FindById(orderId)];
@@ -50,8 +51,7 @@ namespace FoodOrderApp
 
         private int FindById(int orderId)
         {
-            return Orders.AllOrders.FindIndex(o =>o.Id == orderId);
+            return Orders.AllOrders.FindIndex(o => o.Id == orderId);
         }
-        
     }
 }

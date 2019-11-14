@@ -1,6 +1,6 @@
 using System;
 
-namespace FoodOrderApp
+namespace FoodOrderApp.Models
 {
     public class Order
     {
@@ -10,7 +10,7 @@ namespace FoodOrderApp
         public string FoodOrder { get; private set; }
         public DateTime TimeOfOrder { get; private set; }
 
-        public Order( string firstName, string lastName, string foodOrder)
+        public Order(string firstName, string lastName, string foodOrder)
         {
             FirstName = firstName;
             LastName = lastName;
