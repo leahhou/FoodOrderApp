@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
-using System.Net.Sockets;
+using FoodOrderApp.Models;
 
 namespace FoodOrderApp
 {
-    public class OrdersDataInMemory :IOrdersData
+    public class OrdersDataInMemory : IOrdersData
     {
         public readonly Orders Orders;
 
@@ -11,13 +12,14 @@ namespace FoodOrderApp
         {
             Orders = Orders.Instance;
         }
+
         public Order Create(Order order)
         {
             order.Id = AssignId();
             Orders.AllOrders.Add(order);
             return order;
         }
-        
+
         public Order Update(Order order)
         {
             var orderIndex = FindById(order.Id);
@@ -25,18 +27,23 @@ namespace FoodOrderApp
             return Orders.AllOrders[orderIndex];
         }
 
-        public List<Order> DeleteById(int orderId)
+        public List<Order> DeleteById(int? orderId)
         {
-            Orders.AllOrders.RemoveAt(orderId);
-            return Orders.AllOrders;
+            if (orderId == null)
+                throw new Exception("id cannot be null");
+            else
+            {
+                Orders.AllOrders.RemoveAt((int)orderId);
+                return Orders.AllOrders;  
+            }
         }
-        
+
         public List<Order> RetrieveAll()
         {
             return Orders.AllOrders;
         }
-        
-        public Order RetrieveById(int orderId)
+
+        public Order RetrieveById(int? orderId)
         {
             return Orders.AllOrders[FindById(orderId)];
         }
@@ -48,11 +55,11 @@ namespace FoodOrderApp
             return Orders.AllOrders.Count;
         }
 
-        private int FindById(int orderId)
+        private int FindById(int? orderId)
         {
-            
-            return Orders.AllOrders.FindIndex(o =>o.Id == orderId);
+            if (orderId == null)
+                throw new Exception("id cannot be null");
+            return Orders.AllOrders.FindIndex(o => o.Id == orderId);
         }
-        
     }
 }

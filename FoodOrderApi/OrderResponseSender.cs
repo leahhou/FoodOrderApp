@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using FoodOrderApp;
+using FoodOrderApp.Models;
 using Newtonsoft.Json;
 
 namespace FoodOrderApi

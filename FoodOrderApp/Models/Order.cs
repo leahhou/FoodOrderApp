@@ -1,16 +1,16 @@
 using System;
 
-namespace FoodOrderApp
+namespace FoodOrderApp.Models
 {
     public class Order
     {
-        public int Id;
+        public int? Id;
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string FoodOrder { get; private set; }
         public DateTime TimeOfOrder { get; private set; }
 
-        public Order( string firstName, string lastName, string foodOrder)
+        public Order(string firstName, string lastName, string foodOrder)
         {
             FirstName = firstName;
             LastName = lastName;

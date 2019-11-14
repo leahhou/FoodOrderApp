@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using FoodOrderApp;
+using FoodOrderApp.Models;
 using Newtonsoft.Json;
 using Xunit;
 
