@@ -26,14 +26,14 @@ namespace FoodOrderApp
         {
             return ValidateOrder(order)
                 ? OrdersData.Create(order)
-                : throw new InvalidOrderException("Invalid Order: FirstName or LastName or FoodOrder cannot be empty");
+                : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to create an order.");
         }
 
         public Order UpdateOrder(Order order)
         {
             return ValidateOrder(order)
                 ? OrdersData.Update(order)
-                : throw new InvalidOrderException("Invalid Order: FirstName or LastName or FoodOrder cannot be empty");
+                : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to update an order.");
         }
 
         public List<Order> DeleteOrderById(int? orderId)
