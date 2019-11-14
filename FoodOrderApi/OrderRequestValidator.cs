@@ -9,11 +9,11 @@ namespace FoodOrderApi
     {
         public static bool IsOrderIdValid(Order order, HttpListenerRequest req)
         {
-            var id = int.Parse(req.Url.Segments.LastOrDefault() ?? throw new Exception());
-            if (id == order.Id)
+            var routeId = int.Parse(req.Url.Segments.LastOrDefault() ?? throw new Exception());
+            var requestId = int.Parse(req.Headers["id"]);
+            if (routeId == requestId)
                 return true;
-            throw new PermissionException("Error: You are not allowed in this route.");
+            throw new PermissionException("Error: Permission Denied.");
         }
-        
     }
 }

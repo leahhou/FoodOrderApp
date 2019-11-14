@@ -50,7 +50,6 @@ namespace FoodOrderApp
 
         private int FindById(int orderId)
         {
-            
             return Orders.AllOrders.FindIndex(o =>o.Id == orderId);
         }
         
