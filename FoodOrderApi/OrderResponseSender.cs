@@ -9,33 +9,36 @@ namespace FoodOrderApi
 {
     public class OrderResponseSender
     {
-        public void SendSuccessResponse(HttpListenerResponse res, int statusCode, List<Order> orders)
+        public string GetResponseBody(List<Order> orders)
         {
-            var responseBody = JsonConvert.SerializeObject(orders);
-            PrepareBuffer(res,responseBody,statusCode);
+            return JsonConvert.SerializeObject(orders);
         }
         
-        public void SendSuccessResponse(HttpListenerResponse res, int statusCode, Order order)
+        public string GetResponseBody(Order order)
         {
-            var responseBody = JsonConvert.SerializeObject(order);
-            PrepareBuffer(res,responseBody,statusCode);
+            return JsonConvert.SerializeObject(order);
+        }
+        
+        public void SendSuccessResponse(HttpListenerResponse res, HttpStatusCode statusCode, string responseBody)
+        {
+            PrepareBuffer(res,statusCode,responseBody);
         }
 
-        public void SendFailResponse(HttpListenerResponse res, int statusCode)
+        public void SendFailResponse(HttpListenerResponse res, HttpStatusCode statusCode)
         {
-            res.StatusCode = statusCode;
+            res.StatusCode = (int)statusCode;
             res.Close();
         }
-        public void SendFailResponseWithMessage(HttpListenerResponse res, string responseBody, int statusCode)
+        public void SendFailResponseWithMessage(HttpListenerResponse res, HttpStatusCode statusCode, string responseBody)
         {
-            PrepareBuffer(res, responseBody, statusCode);
+            PrepareBuffer(res, statusCode, responseBody);
         }
 
-        private async void PrepareBuffer(HttpListenerResponse res, string responseBody, int statusCode)
+        private async void PrepareBuffer(HttpListenerResponse res, HttpStatusCode statusCode,string responseBody)
         {
             var buffer = Encoding.UTF8.GetBytes(responseBody);
             res.ContentLength64 = buffer.Length;
-            res.StatusCode = statusCode;
+            res.StatusCode = (int)statusCode;
             
             await res.OutputStream.WriteAsync(buffer, 0, buffer.Length);
             res.Close();

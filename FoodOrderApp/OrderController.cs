@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using FoodOrderApp.Models;
 
@@ -19,6 +20,8 @@ namespace FoodOrderApp
 
         public Order GetOrderById(int orderId)
         {
+            if(orderId >= OrdersData.Orders.AllOrders.Count|| orderId < 0)
+                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
             return OrdersData.RetrieveById(orderId);
         }
 
@@ -31,13 +34,17 @@ namespace FoodOrderApp
 
         public Order UpdateOrder(Order order)
         {
+            if(order.Id >= OrdersData.Orders.AllOrders.Count|| order.Id < 0)
+                throw new ArgumentOutOfRangeException(nameof(order), "Error: Id does not exist.");
             return ValidateOrder(order)
                 ? OrdersData.Update(order)
                 : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to update an order.");
         }
 
-        public List<Order> DeleteOrderById(int? orderId)
+        public Order DeleteOrderById(int? orderId)
         {
+            if(orderId >= OrdersData.Orders.AllOrders.Count|| orderId < 0)
+                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
             return OrdersData.DeleteById(orderId);
         }
 

@@ -6,13 +6,12 @@ namespace FoodOrderApp
 {
     public class OrdersDataInMemory : IOrdersData
     {
-        public readonly Orders Orders;
+        public Orders Orders { get; }
 
         public OrdersDataInMemory()
         {
             Orders = Orders.Instance;
         }
-
         public Order Create(Order order)
         {
             order.Id = AssignId();
@@ -27,15 +26,13 @@ namespace FoodOrderApp
             return Orders.AllOrders[orderIndex];
         }
 
-        public List<Order> DeleteById(int? orderId)
+        public Order DeleteById(int? orderId)
         {
             if (orderId == null)
                 throw new Exception("id cannot be null");
-            else
-            {
+            var orderDeleted = Orders.AllOrders[(int)orderId];
                 Orders.AllOrders.RemoveAt((int)orderId);
-                return Orders.AllOrders;  
-            }
+                return orderDeleted;
         }
 
         public List<Order> RetrieveAll()

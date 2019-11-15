@@ -1,6 +1,5 @@
 using System;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using FoodOrderApp;
 
@@ -37,7 +36,8 @@ namespace FoodOrderApi
                 var requestParser = new OrderRequestParser();
                 var responseSender = new OrderResponseSender();
                 var orderController = new OrderController(new OrdersDataInMemory());
-
+                string responseBody = null;
+                HttpStatusCode statusCode = HttpStatusCode.OK;
                 Console.WriteLine($"{req.HttpMethod} request made to {req.Url}\n");
 
                 try
@@ -45,10 +45,8 @@ namespace FoodOrderApi
                     if (req.HttpMethod == "GET" && req.Url.AbsolutePath == "/orders")
                     {
                         ConsoleRequestMessage(req.HttpMethod);
-
-                        var orderList = orderController.GetAllOrders();
-
-                        responseSender.SendSuccessResponse(res, 200, orderList);
+    
+                        responseBody = responseSender.GetResponseBody(orderController.GetAllOrders());
                     }
                     else if (req.HttpMethod == "GET" && req.Url.AbsolutePath.StartsWith("/orders/"))
                     {
@@ -56,8 +54,9 @@ namespace FoodOrderApi
 
                         var orderId = int.Parse(req.Url.Segments[2]);
                         
-                        var responseBody = orderController.GetOrderById(orderId);
-                        responseSender.SendSuccessResponse(res, 200, responseBody);
+//                        OrderRequestValidator.IsOrderExist(orderId);
+                        
+                        responseBody = responseSender.GetResponseBody(orderController.GetOrderById(orderId));
                     }
                     else if (req.HttpMethod == "POST" && req.Url.AbsolutePath == "/orders")
                     {
@@ -65,9 +64,9 @@ namespace FoodOrderApi
 
                         ConsoleRequestMessage(req.HttpMethod);
 
-                        var newOrder = orderController.CreateOrder(order);
+                        responseBody = responseSender.GetResponseBody(orderController.CreateOrder(order));
 
-                        responseSender.SendSuccessResponse(res, 201, newOrder);
+                        statusCode = HttpStatusCode.Created;
                     }
                     else if (req.HttpMethod == "PUT" && req.Url.AbsolutePath.StartsWith($"/orders/"))
                     {
@@ -76,45 +75,60 @@ namespace FoodOrderApi
                         ConsoleRequestMessage(req.HttpMethod);
                         
                         OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
+                        
+//                        OrderRequestValidator.IsOrderExist(orderId);
 
                         if (OrderRequestValidator.IsOrderIdValid(order, req))
                         {
-                            var responseBody = orderController.UpdateOrder(order);
-                            responseSender.SendSuccessResponse(res, 200, responseBody);
+                            responseBody = responseSender.GetResponseBody(orderController.UpdateOrder(order));
                         }
                     }
+//                    else if (req.HttpMethod == "PATCH" && req.Url.AbsolutePath.StartsWith($"/orders/"))
+//                    {
+//                        var order = await requestParser.GetOrder(req);
+//
+//                        ConsoleRequestMessage(req.HttpMethod);
+//                        
+//                        OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
+//                        
+////                        OrderRequestValidator.IsOrderExist(orderId);
+//
+//                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+//                        {
+//                            responseBody = responseSender.GetResponseBody(orderController.UpdateOrder(order));
+//                        }
+//                    }
                     else if (req.HttpMethod == "DELETE" && req.Url.AbsolutePath.StartsWith($"/orders/"))
                     {
                         var order = await requestParser.GetOrder(req);
 
                         ConsoleRequestMessage(req.HttpMethod);
 
+//                        OrderRequestValidator.IsOrderExist(orderId);
                         if (OrderRequestValidator.IsOrderIdValid(order, req))
                         {
-                            var responseBody = orderController.DeleteOrderById(order.Id);
-                            responseSender.SendSuccessResponse(res, 200, responseBody);
+                            responseBody = responseSender.GetResponseBody(orderController.DeleteOrderById(order.Id));
                         }
                     }
-                    else
-                    {
-                        var buffer = Encoding.UTF8.GetBytes("all other routes didn't work.");
-                        res.ContentLength64 = buffer.Length;
+                    
+                    responseSender.SendSuccessResponse(res, statusCode, responseBody);
 
-                        await res.OutputStream.WriteAsync(buffer, 0, buffer.Length);
-                        res.Close();
-                    }
                 }
                 catch (InvalidOrderRequestException e)
                 {
-                    responseSender.SendFailResponseWithMessage(res, e.Message, 400);
+                    responseSender.SendFailResponseWithMessage(res, HttpStatusCode.BadRequest, e.Message);
                 }
+                catch (ArgumentOutOfRangeException e)
+                {
+                    responseSender.SendFailResponseWithMessage(res, HttpStatusCode.NotFound, e.Message);
+                } 
                 catch (InvalidOrderException e)
                 {
-                    responseSender.SendFailResponseWithMessage(res, e.Message, 400);
+                    responseSender.SendFailResponseWithMessage(res, HttpStatusCode.BadRequest, e.Message);
                 }
                 catch (Exception e)
                 {
-                    responseSender.SendFailResponseWithMessage(res, e.Message, 400);
+                    responseSender.SendFailResponseWithMessage(res, HttpStatusCode.BadRequest, e.Message);
                 }
             }
         }

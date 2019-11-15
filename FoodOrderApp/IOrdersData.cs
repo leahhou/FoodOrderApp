@@ -5,9 +5,10 @@ namespace FoodOrderApp
 {
     public interface IOrdersData
     {
+         Orders Orders { get; }
         Order Create(Order order);
         Order Update(Order order);
-        List<Order> DeleteById(int? orderId);
+        Order DeleteById(int? orderId);
         List<Order> RetrieveAll();
         Order RetrieveById(int? orderId);
     }
