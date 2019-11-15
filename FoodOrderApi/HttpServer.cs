@@ -37,7 +37,7 @@ namespace FoodOrderApi
                 var responseSender = new OrderResponseSender();
                 var orderController = new OrderController(new OrdersDataInMemory());
                 string responseBody = null;
-                HttpStatusCode statusCode = HttpStatusCode.OK;
+                var statusCode = HttpStatusCode.OK;
                 Console.WriteLine($"{req.HttpMethod} request made to {req.Url}\n");
 
                 try
@@ -53,8 +53,6 @@ namespace FoodOrderApi
                         ConsoleRequestMessage(req.HttpMethod);
 
                         var orderId = int.Parse(req.Url.Segments[2]);
-                        
-//                        OrderRequestValidator.IsOrderExist(orderId);
                         
                         responseBody = responseSender.GetResponseBody(orderController.GetOrderById(orderId));
                     }
@@ -76,38 +74,34 @@ namespace FoodOrderApi
                         
                         OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
                         
-//                        OrderRequestValidator.IsOrderExist(orderId);
-
-                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+                        if (order.Id != null && OrderRequestValidator.IsOrderIdValid((int)order.Id, req))
                         {
-                            responseBody = responseSender.GetResponseBody(orderController.UpdateOrder(order));
+                            responseBody = responseSender.GetResponseBody(orderController.ReplaceOrder(order));
                         }
                     }
-//                    else if (req.HttpMethod == "PATCH" && req.Url.AbsolutePath.StartsWith($"/orders/"))
-//                    {
-//                        var order = await requestParser.GetOrder(req);
-//
-//                        ConsoleRequestMessage(req.HttpMethod);
-//                        
-//                        OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
-//                        
-////                        OrderRequestValidator.IsOrderExist(orderId);
-//
-//                        if (OrderRequestValidator.IsOrderIdValid(order, req))
-//                        {
-//                            responseBody = responseSender.GetResponseBody(orderController.UpdateOrder(order));
-//                        }
-//                    }
-                    else if (req.HttpMethod == "DELETE" && req.Url.AbsolutePath.StartsWith($"/orders/"))
+                    else if (req.HttpMethod == "PATCH" && req.Url.AbsolutePath.StartsWith($"/orders/"))
                     {
                         var order = await requestParser.GetOrder(req);
 
                         ConsoleRequestMessage(req.HttpMethod);
-
-//                        OrderRequestValidator.IsOrderExist(orderId);
-                        if (OrderRequestValidator.IsOrderIdValid(order, req))
+                        
+                        OrderRequestValidator.IsOrderIdExistOnRequestBody(order);
+                        
+                        if (order.Id != null && OrderRequestValidator.IsOrderIdValid((int)order.Id, req))
                         {
-                            responseBody = responseSender.GetResponseBody(orderController.DeleteOrderById(order.Id));
+                            responseBody = responseSender.GetResponseBody(orderController.UpdateOrder(order));
+                        }
+                    }
+                    else if (req.HttpMethod == "DELETE" && req.Url.AbsolutePath.StartsWith($"/orders/"))
+                    {
+
+                        ConsoleRequestMessage(req.HttpMethod);
+                        
+                        var orderId = int.Parse(req.Url.Segments[2]);
+                        
+                        if (OrderRequestValidator.IsOrderIdValid(orderId, req))
+                        {
+                            responseBody = responseSender.GetResponseBody(orderController.DeleteOrderById(orderId));
                         }
                     }
                     

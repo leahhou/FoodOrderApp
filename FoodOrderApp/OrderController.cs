@@ -6,53 +6,72 @@ namespace FoodOrderApp
 {
     public class OrderController
     {
-        public readonly IOrdersData OrdersData;
+        private readonly IOrdersData _ordersData;
 
         public OrderController(IOrdersData ordersData)
         {
-            OrdersData = ordersData;
+            _ordersData = ordersData;
         }
 
         public List<Order> GetAllOrders()
         {
-            return OrdersData.RetrieveAll();
+            return _ordersData.RetrieveAll();
         }
 
-        public Order GetOrderById(int orderId)
+        public Order GetOrderById(int? orderId)
         {
-            if(orderId >= OrdersData.Orders.AllOrders.Count|| orderId < 0)
-                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
-            return OrdersData.RetrieveById(orderId);
+            ThrowExceptionIfOrderIdIsOutOfRange(orderId);
+            return _ordersData.RetrieveById(orderId);
         }
 
         public Order CreateOrder(Order order)
         {
-            return ValidateOrder(order)
-                ? OrdersData.Create(order)
+            return ValidateAllFields(order)
+                ? _ordersData.Create(order)
                 : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to create an order.");
         }
 
+        public Order ReplaceOrder(Order order)
+        {
+            ThrowExceptionIfOrderIdIsOutOfRange(order.Id);
+            return ValidateAllFields(order)
+                ? _ordersData.Update(order)
+                : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to replace an order.");
+        }
+        
         public Order UpdateOrder(Order order)
         {
-            if(order.Id >= OrdersData.Orders.AllOrders.Count|| order.Id < 0)
-                throw new ArgumentOutOfRangeException(nameof(order), "Error: Id does not exist.");
-            return ValidateOrder(order)
-                ? OrdersData.Update(order)
-                : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to update an order.");
+            ThrowExceptionIfOrderIdIsOutOfRange(order.Id);
+            return ValidateOneField(order)
+                ? throw new InvalidOrderException(
+                    "Invalid Order: Either FirstName, LastName or FoodOrder fields is required to update an order.")
+                : _ordersData.Update(order);
         }
 
         public Order DeleteOrderById(int? orderId)
         {
-            if(orderId >= OrdersData.Orders.AllOrders.Count|| orderId < 0)
-                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
-            return OrdersData.DeleteById(orderId);
+            ThrowExceptionIfOrderIdIsOutOfRange(orderId);
+            return _ordersData.DeleteById(orderId);
         }
 
-        private static bool ValidateOrder(Order order)
+        private static bool ValidateAllFields(Order order)
         {
             return !string.IsNullOrWhiteSpace(order.FirstName)
                    && !string.IsNullOrWhiteSpace(order.LastName)
                    && !string.IsNullOrWhiteSpace(order.FoodOrder);
+        }
+        
+        private static bool ValidateOneField(Order order)
+        {
+            return string.IsNullOrWhiteSpace(order.LastName)
+                   && string.IsNullOrWhiteSpace(order.LastName)
+                   && string.IsNullOrWhiteSpace(order.FoodOrder);
+        }
+
+        private void ThrowExceptionIfOrderIdIsOutOfRange(int? orderId)
+        {
+            if(orderId >= _ordersData.Orders.AllOrders.Count|| orderId < 0)
+                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
         }
     }
 }
