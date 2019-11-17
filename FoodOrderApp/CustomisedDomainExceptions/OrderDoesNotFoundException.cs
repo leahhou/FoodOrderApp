@@ -1,6 +1,6 @@
 using System;
 
-namespace FoodOrderApp
+namespace FoodOrderApp.CustomisedDomainExceptions
 {
     public class OrderDoesNotFoundException : Exception
     {

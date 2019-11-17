@@ -1,6 +1,6 @@
 using System;
 
-namespace FoodOrderApi
+namespace FoodOrderApi.CustomisedApiExceptions
 {
     public class InvalidOrderRequestException : Exception
     {

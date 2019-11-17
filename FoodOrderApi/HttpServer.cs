@@ -1,7 +1,9 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using FoodOrderApi.CustomisedApiExceptions;
 using FoodOrderApp;
+using FoodOrderApp.CustomisedDomainExceptions;
 
 namespace FoodOrderApi
 {
@@ -104,15 +106,23 @@ namespace FoodOrderApi
                             responseBody = responseSender.GetResponseBody(orderController.DeleteOrderById(orderId));
                         }
                     }
+                    else
+                    {
+                        throw new RouteNotFoundException("Error: Not Found");
+                    }
                     
                     responseSender.SendSuccessResponse(res, statusCode, responseBody);
 
+                }
+                catch (RouteNotFoundException e)
+                {
+                    responseSender.SendFailResponseWithMessage(res, HttpStatusCode.NotFound, e.Message);
                 }
                 catch (InvalidOrderRequestException e)
                 {
                     responseSender.SendFailResponseWithMessage(res, HttpStatusCode.BadRequest, e.Message);
                 }
-                catch (ArgumentOutOfRangeException e)
+                catch (OrderDoesNotFoundException e)
                 {
                     responseSender.SendFailResponseWithMessage(res, HttpStatusCode.NotFound, e.Message);
                 } 
