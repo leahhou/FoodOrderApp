@@ -2,9 +2,9 @@ using System;
 
 namespace FoodOrderApp.CustomisedDomainExceptions
 {
-    public class OrderDoesNotFoundException : Exception
+    public class OrderNotFoundException : Exception
     {
-        public  OrderDoesNotFoundException(string message)
+        public  OrderNotFoundException(string message)
             : base(message)
         {
         }

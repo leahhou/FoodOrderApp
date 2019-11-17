@@ -71,7 +71,7 @@ namespace FoodOrderApp
         private void ThrowOrderDoesNotFoundException(int? orderId)
         {
             if(orderId >= _ordersData.Orders.AllOrders.Count|| orderId < 0)
-                throw new OrderDoesNotFoundException( "Error: Id does not exist.");
+                throw new OrderNotFoundException( "Error: Id does not exist.");
         }
     }
 }

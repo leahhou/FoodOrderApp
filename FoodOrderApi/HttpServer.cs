@@ -108,7 +108,7 @@ namespace FoodOrderApi
                     }
                     else
                     {
-                        throw new RouteNotFoundException("Error: Not Found");
+                        throw new RouteNotFoundException("Error: Route Not Found");
                     }
                     
                     responseSender.SendSuccessResponse(res, statusCode, responseBody);
@@ -122,7 +122,7 @@ namespace FoodOrderApi
                 {
                     responseSender.SendFailResponseWithMessage(res, HttpStatusCode.BadRequest, e.Message);
                 }
-                catch (OrderDoesNotFoundException e)
+                catch (OrderNotFoundException e)
                 {
                     responseSender.SendFailResponseWithMessage(res, HttpStatusCode.NotFound, e.Message);
                 } 
