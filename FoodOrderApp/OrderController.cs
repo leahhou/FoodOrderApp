@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using FoodOrderApp.CustomisedDomainExceptions;
 using FoodOrderApp.Models;
 
 namespace FoodOrderApp
@@ -20,7 +20,7 @@ namespace FoodOrderApp
 
         public Order GetOrderById(int? orderId)
         {
-            ThrowExceptionIfOrderIdIsOutOfRange(orderId);
+            ThrowOrderDoesNotFoundException(orderId);
             return _ordersData.RetrieveById(orderId);
         }
 
@@ -33,7 +33,7 @@ namespace FoodOrderApp
 
         public Order ReplaceOrder(Order order)
         {
-            ThrowExceptionIfOrderIdIsOutOfRange(order.Id);
+            ThrowOrderDoesNotFoundException(order.Id);
             return ValidateAllFields(order)
                 ? _ordersData.Update(order)
                 : throw new InvalidOrderException("Invalid Order: FirstName, LastName and FoodOrder fields are all required to replace an order.");
@@ -41,7 +41,7 @@ namespace FoodOrderApp
         
         public Order UpdateOrder(Order order)
         {
-            ThrowExceptionIfOrderIdIsOutOfRange(order.Id);
+            ThrowOrderDoesNotFoundException(order.Id);
             return ValidateOneField(order)
                 ? throw new InvalidOrderException(
                     "Invalid Order: Either FirstName, LastName or FoodOrder fields is required to update an order.")
@@ -50,7 +50,7 @@ namespace FoodOrderApp
 
         public Order DeleteOrderById(int? orderId)
         {
-            ThrowExceptionIfOrderIdIsOutOfRange(orderId);
+            ThrowOrderDoesNotFoundException(orderId);
             return _ordersData.DeleteById(orderId);
         }
 
@@ -68,10 +68,10 @@ namespace FoodOrderApp
                    && string.IsNullOrWhiteSpace(order.FoodOrder);
         }
 
-        private void ThrowExceptionIfOrderIdIsOutOfRange(int? orderId)
+        private void ThrowOrderDoesNotFoundException(int? orderId)
         {
             if(orderId >= _ordersData.Orders.AllOrders.Count|| orderId < 0)
-                throw new ArgumentOutOfRangeException(nameof(orderId), "Error: Id does not exist.");
+                throw new OrderNotFoundException( "Error: Id does not exist.");
         }
     }
 }
