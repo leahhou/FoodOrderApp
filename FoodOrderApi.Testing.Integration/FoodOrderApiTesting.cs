@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using FoodOrderApp;
 using FoodOrderApp.Models;
 using Newtonsoft.Json;
 using Xunit;
@@ -13,14 +12,18 @@ namespace FoodOrderApi.Testing.Integration
         [Fact]
         public async void PostOrderTest()
         {
-            using (var postClient = new HttpClient {BaseAddress = new Uri("http://localhost:8080")})
+            using (var postOrderClient = new HttpClient())
             {
-                var orderToPost = JsonConvert.SerializeObject(
-                    new Order("Leah","Hou","Burritos"));
+                postOrderClient.BaseAddress = new Uri("http://localhost:8080");
+                
+                var order = JsonConvert.SerializeObject(
+                    new Order("Leah","Hou","Chicken"));
 
-                var postResponse = await postClient.PostAsync("/orders", new StringContent(orderToPost)); //StringContent sets httpRequest header: Content-Type as text/plain which allows the server to interpret the request body as text/plain
+                var postResponse = await postOrderClient.PostAsync("/orders", new StringContent(order));
+                //StringContent sets httpRequest header: Content-Type as text/plain which allows the server to interpret the request body as text/plain
 
                 var orderResponse = JsonConvert.DeserializeObject<Order>(await postResponse.Content.ReadAsStringAsync());
+                
 
                 using (var getClient = new HttpClient {BaseAddress = new Uri("http://localhost:8080")})
                 {
@@ -47,9 +50,10 @@ namespace FoodOrderApi.Testing.Integration
             using (var getAllOrdersClient = new HttpClient {BaseAddress = new Uri("http://localhost:8080")}) //instant from a httpClient(client side)
             {
                 var getResponse = await getAllOrdersClient.GetAsync("/orders"); //sending a request from client side & return the response;
-
+    
                 var ordersResponse = JsonConvert.DeserializeObject<List<Order>>(await getResponse.Content.ReadAsStringAsync());
-                //???
+                //JsonConvert.DeserializeObject: try to convert String to List<Order> 
+                //
                 
                 Assert.Equal(200, (int)getResponse.StatusCode);
                 Assert.Empty(ordersResponse);
