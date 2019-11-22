@@ -1,20 +1,29 @@
 using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using FoodOrderApi.CustomisedApiExceptions;
 using FoodOrderApp;
 using FoodOrderApp.CustomisedDomainExceptions;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
 
 namespace FoodOrderApi
 {
     public static class HttpServer
     {
         private static HttpListener _listener;
-        private static string _url = "http://*:80/";
+        private static string _url; 
 
         public static void RunServer()
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            var configuration = builder.Build();
+            
+            _url = configuration["AppSettings:url"];
+            
             _listener = new HttpListener();
             _listener.Prefixes.Add(_url);
             _listener.Start();
