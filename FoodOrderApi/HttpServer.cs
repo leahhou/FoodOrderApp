@@ -1,7 +1,5 @@
 using System;
-using System.IO;
 using System.Net;
-using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
 using FoodOrderApi.CustomisedApiExceptions;
 using FoodOrderApp;
