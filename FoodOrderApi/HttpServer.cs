@@ -11,13 +11,14 @@ namespace FoodOrderApi
     public static class HttpServer
     {
         private static HttpListener _listener;
-        private static string _url = "http://localhost:8080/";
+        private static string _url = "http://*:80/";
 
         public static void RunServer()
         {
             _listener = new HttpListener();
             _listener.Prefixes.Add(_url);
             _listener.Start();
+
 
             Console.WriteLine($"listening on {_url}\n");
 
