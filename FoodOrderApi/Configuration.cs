@@ -8,17 +8,17 @@ namespace FoodOrderApi
     {
         public static IConfigurationBuilder Config()
         {
-            var environmentName = Environment.GetEnvironmentVariable("ENVIRONMENT") ?? "local";
+            var appLocation = Environment.GetEnvironmentVariable("APPLOCATION") ?? "local";
 
-            Console.WriteLine($"GetCommandLineArgs: {environmentName}");
-            
+            Console.WriteLine($"app location: {appLocation}");
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true)
-//                .AddJsonFile($"appsettings.{environmentName}.json")
-                .AddJsonFile($"appsettings.{environmentName}.json", false, true)
+                .AddJsonFile($"appsettings.{appLocation}.json", false, true)
                 .AddEnvironmentVariables();
-            return builder;
+                //Environment variable is used to get the desired appsettings.{appLocation.json file;
+                return builder;
         }
     }
 }
