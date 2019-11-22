@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
 using FoodOrderApi.CustomisedApiExceptions;
 using FoodOrderApp;
 using FoodOrderApp.CustomisedDomainExceptions;
-using Microsoft.Extensions.Configuration;
 
 namespace FoodOrderApi
 {
@@ -16,14 +16,11 @@ namespace FoodOrderApi
 
         public static void RunServer()
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-
+            var builder = Configuration.Config();
             var configuration = builder.Build();
             
             _url = configuration["AppSettings:url"];
-            
+
             _listener = new HttpListener();
             _listener.Prefixes.Add(_url);
             _listener.Start();
