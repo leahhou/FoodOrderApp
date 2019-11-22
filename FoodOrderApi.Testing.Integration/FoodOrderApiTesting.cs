@@ -53,8 +53,7 @@ namespace FoodOrderApi.Testing.Integration
     
                 var ordersResponse = JsonConvert.DeserializeObject<List<Order>>(await getResponse.Content.ReadAsStringAsync());
                 //JsonConvert.DeserializeObject: try to convert String to List<Order> 
-                //
-                
+
                 Assert.Equal(200, (int)getResponse.StatusCode);
                 Assert.Empty(ordersResponse);
             }
