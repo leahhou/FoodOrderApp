@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FoodOrderApi
+﻿namespace FoodOrderApi
 {
     class Program
     {

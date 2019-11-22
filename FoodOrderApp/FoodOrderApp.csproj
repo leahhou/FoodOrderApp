@@ -32,4 +32,10 @@
       <DeployManifest Remove="obj\Debug\netcoreapp2.2\FoodOrderApp.application" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    </ItemGroup>
+
 </Project>
