@@ -18,7 +18,6 @@ namespace FoodOrderApi
             var configuration = builder.Build();
 
             _url = configuration["AppSettings:url"];
-//            _url = Environment.GetEnvironmentVariable("URL") ?? "http://localhost:8080/";
 
             _listener = new HttpListener();
             _listener.Prefixes.Add(_url);
