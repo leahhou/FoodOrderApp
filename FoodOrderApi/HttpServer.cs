@@ -18,7 +18,7 @@ namespace FoodOrderApi
             var configuration = builder.Build();
             
             _url = configuration["AppSettings:url"];
-
+            
             _listener = new HttpListener();
             _listener.Prefixes.Add(_url);
             _listener.Start();
